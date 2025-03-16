@@ -30,14 +30,11 @@ spring:
   jackson:
     serialization:
       indent-output: true
+  spring:
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/psGama
-    username: psGama
-    password:
-    hikari:
-      poolName: Hikari
-      auto-commit: false
+    url: jdbc:postgresql://pg.rapidapp.io:5433/db_a0baebb9_e9c9_4f28_9393_8dd799d8284e?sslmode=require&application_name=ps_gama # You can find details on Rapidapp db details page.
+    username: u_a0baebb9_e9c9_4f28_9393_8dd799d8284e
+    password: 3Mzoz0auDSPQ43a060P9uLtz31lzpL9Pl6DCa145G742ibJ3g2Fk
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker

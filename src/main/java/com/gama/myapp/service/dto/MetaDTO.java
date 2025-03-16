@@ -19,7 +19,7 @@ public class MetaDTO implements Serializable {
     @NotNull
     private Float nota;
 
-    private AlunoDTO metas;
+    private AlunoDTO aluno;
 
     public Long getId() {
         return id;
@@ -45,12 +45,12 @@ public class MetaDTO implements Serializable {
         this.nota = nota;
     }
 
-    public AlunoDTO getMetas() {
-        return metas;
+    public AlunoDTO getAluno() {
+        return aluno;
     }
 
-    public void setMetas(AlunoDTO metas) {
-        this.metas = metas;
+    public void setAluno(AlunoDTO aluno) {
+        this.aluno = aluno;
     }
 
     @Override
@@ -81,7 +81,7 @@ public class MetaDTO implements Serializable {
             "id=" + getId() +
             ", area='" + getArea() + "'" +
             ", nota=" + getNota() +
-            ", metas=" + getMetas() +
+            ", aluno=" + getAluno() +
             "}";
     }
 }

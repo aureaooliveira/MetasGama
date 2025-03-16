@@ -37,8 +37,8 @@ public class Aluno implements Serializable {
     @Column(name = "curso_pretendido")
     private String cursoPretendido;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "metas")
-    @JsonIgnoreProperties(value = { "metas" }, allowSetters = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "aluno")
+    @JsonIgnoreProperties(value = { "aluno" }, allowSetters = true)
     private Set<Meta> metas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -114,10 +114,10 @@ public class Aluno implements Serializable {
 
     public void setMetas(Set<Meta> metas) {
         if (this.metas != null) {
-            this.metas.forEach(i -> i.setMetas(null));
+            this.metas.forEach(i -> i.setAluno(null));
         }
         if (metas != null) {
-            metas.forEach(i -> i.setMetas(this));
+            metas.forEach(i -> i.setAluno(this));
         }
         this.metas = metas;
     }
@@ -127,15 +127,15 @@ public class Aluno implements Serializable {
         return this;
     }
 
-    public Aluno addMeta(Meta meta) {
+    public Aluno addMetas(Meta meta) {
         this.metas.add(meta);
-        meta.setMetas(this);
+        meta.setAluno(this);
         return this;
     }
 
-    public Aluno removeMeta(Meta meta) {
+    public Aluno removeMetas(Meta meta) {
         this.metas.remove(meta);
-        meta.setMetas(null);
+        meta.setAluno(null);
         return this;
     }
 

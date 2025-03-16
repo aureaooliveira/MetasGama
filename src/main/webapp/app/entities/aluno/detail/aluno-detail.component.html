@@ -33,6 +33,18 @@
           </dd>
         </dl>
 
+        <!-- Nova seção para exibir as Metas do aluno -->
+        <h3>Metas</h3>
+        <ul *ngIf="alunoRef && alunoRef.metas && alunoRef.metas.length > 0; else semMetas">
+          <li *ngFor="let meta of alunoRef.metas">
+            <strong>{{ meta.area }}</strong
+            >: {{ meta.nota }}
+          </li>
+        </ul>
+        <ng-template #semMetas>
+          <p>Este aluno ainda não possui metas cadastradas.</p>
+        </ng-template>
+
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
           <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
         </button>

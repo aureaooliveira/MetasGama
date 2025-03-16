@@ -84,14 +84,14 @@ export class MetaUpdateComponent implements OnInit {
     this.meta = meta;
     this.metaFormService.resetForm(this.editForm, meta);
 
-    this.alunosSharedCollection = this.alunoService.addAlunoToCollectionIfMissing<IAluno>(this.alunosSharedCollection, meta.metas);
+    this.alunosSharedCollection = this.alunoService.addAlunoToCollectionIfMissing<IAluno>(this.alunosSharedCollection, meta.aluno);
   }
 
   protected loadRelationshipsOptions(): void {
     this.alunoService
       .query()
       .pipe(map((res: HttpResponse<IAluno[]>) => res.body ?? []))
-      .pipe(map((alunos: IAluno[]) => this.alunoService.addAlunoToCollectionIfMissing<IAluno>(alunos, this.meta?.metas)))
+      .pipe(map((alunos: IAluno[]) => this.alunoService.addAlunoToCollectionIfMissing<IAluno>(alunos, this.meta?.aluno)))
       .subscribe((alunos: IAluno[]) => (this.alunosSharedCollection = alunos));
   }
 }

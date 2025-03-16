@@ -20,7 +20,7 @@ type MetaFormGroupContent = {
   id: FormControl<IMeta['id'] | NewMeta['id']>;
   area: FormControl<IMeta['area']>;
   nota: FormControl<IMeta['nota']>;
-  metas: FormControl<IMeta['metas']>;
+  aluno: FormControl<IMeta['aluno']>;
 };
 
 export type MetaFormGroup = FormGroup<MetaFormGroupContent>;
@@ -46,7 +46,7 @@ export class MetaFormService {
       nota: new FormControl(metaRawValue.nota, {
         validators: [Validators.required],
       }),
-      metas: new FormControl(metaRawValue.metas),
+      aluno: new FormControl(metaRawValue.aluno),
     });
   }
 

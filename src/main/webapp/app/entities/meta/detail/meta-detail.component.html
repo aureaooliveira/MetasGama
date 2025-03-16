@@ -27,11 +27,11 @@
           <dd>
             <span>{{ metaRef.nota }}</span>
           </dd>
-          <dt><span>Metas</span></dt>
+          <dt><span>Aluno</span></dt>
           <dd>
-            @if (meta()!.metas) {
+            @if (meta()!.aluno) {
               <div>
-                <a [routerLink]="['/aluno', meta()!.metas?.id, 'view']">{{ metaRef.metas?.id }}</a>
+                <a [routerLink]="['/aluno', meta()!.aluno?.id, 'view']">{{ metaRef.aluno?.id }}</a>
               </div>
             }
           </dd>

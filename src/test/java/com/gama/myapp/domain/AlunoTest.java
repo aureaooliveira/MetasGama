@@ -26,24 +26,24 @@ class AlunoTest {
     }
 
     @Test
-    void metaTest() {
+    void metasTest() {
         Aluno aluno = getAlunoRandomSampleGenerator();
         Meta metaBack = getMetaRandomSampleGenerator();
 
-        aluno.addMeta(metaBack);
+        aluno.addMetas(metaBack);
         assertThat(aluno.getMetas()).containsOnly(metaBack);
-        assertThat(metaBack.getMetas()).isEqualTo(aluno);
+        assertThat(metaBack.getAluno()).isEqualTo(aluno);
 
-        aluno.removeMeta(metaBack);
+        aluno.removeMetas(metaBack);
         assertThat(aluno.getMetas()).doesNotContain(metaBack);
-        assertThat(metaBack.getMetas()).isNull();
+        assertThat(metaBack.getAluno()).isNull();
 
         aluno.metas(new HashSet<>(Set.of(metaBack)));
         assertThat(aluno.getMetas()).containsOnly(metaBack);
-        assertThat(metaBack.getMetas()).isEqualTo(aluno);
+        assertThat(metaBack.getAluno()).isEqualTo(aluno);
 
         aluno.setMetas(new HashSet<>());
         assertThat(aluno.getMetas()).doesNotContain(metaBack);
-        assertThat(metaBack.getMetas()).isNull();
+        assertThat(metaBack.getAluno()).isNull();
     }
 }

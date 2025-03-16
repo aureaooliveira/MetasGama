@@ -1,0 +1,26 @@
+entity Aluno {
+	nome String required
+	sobreNome String required
+	email String unique
+	cursoPretendido String
+}
+
+entity Meta {
+	area AreaDoEnem required
+	nota Float required
+}
+
+enum AreaDoEnem {
+    LINGUAGENS, CNATUREZA, CHUMANAS, MATEMATICA
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Aluno{metas} to Meta{aluno}
+}
+
+// Set pagination options
+paginate Aluno with infinite-scroll
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+service * with serviceImpl

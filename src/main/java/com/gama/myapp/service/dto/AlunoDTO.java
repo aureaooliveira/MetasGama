@@ -1,8 +1,10 @@
 package com.gama.myapp.service.dto;
 
+import com.gama.myapp.domain.Meta;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the {@link com.gama.myapp.domain.Aluno} entity.
@@ -21,6 +23,16 @@ public class AlunoDTO implements Serializable {
     private String email;
 
     private String cursoPretendido;
+
+    private Set<Meta> metas;
+
+    public Set<Meta> getMetas() {
+        return metas;
+    }
+
+    public void setMetas(Set<Meta> metas) {
+        this.metas = metas;
+    }
 
     public Long getId() {
         return id;

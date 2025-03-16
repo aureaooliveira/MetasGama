@@ -24,14 +24,14 @@ class MetaTest {
     }
 
     @Test
-    void metasTest() {
+    void alunoTest() {
         Meta meta = getMetaRandomSampleGenerator();
         Aluno alunoBack = getAlunoRandomSampleGenerator();
 
-        meta.setMetas(alunoBack);
-        assertThat(meta.getMetas()).isEqualTo(alunoBack);
+        meta.setAluno(alunoBack);
+        assertThat(meta.getAluno()).isEqualTo(alunoBack);
 
-        meta.metas(null);
-        assertThat(meta.getMetas()).isNull();
+        meta.aluno(null);
+        assertThat(meta.getAluno()).isNull();
     }
 }

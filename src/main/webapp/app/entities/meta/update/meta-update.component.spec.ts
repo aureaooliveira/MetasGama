@@ -49,12 +49,12 @@ describe('Meta Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Aluno query and add missing value', () => {
       const meta: IMeta = { id: 7336 };
-      const metas: IAluno = { id: 15328 };
-      meta.metas = metas;
+      const aluno: IAluno = { id: 15328 };
+      meta.aluno = aluno;
 
       const alunoCollection: IAluno[] = [{ id: 15328 }];
       jest.spyOn(alunoService, 'query').mockReturnValue(of(new HttpResponse({ body: alunoCollection })));
-      const additionalAlunos = [metas];
+      const additionalAlunos = [aluno];
       const expectedCollection: IAluno[] = [...additionalAlunos, ...alunoCollection];
       jest.spyOn(alunoService, 'addAlunoToCollectionIfMissing').mockReturnValue(expectedCollection);
 
@@ -71,13 +71,13 @@ describe('Meta Management Update Component', () => {
 
     it('Should update editForm', () => {
       const meta: IMeta = { id: 7336 };
-      const metas: IAluno = { id: 15328 };
-      meta.metas = metas;
+      const aluno: IAluno = { id: 15328 };
+      meta.aluno = aluno;
 
       activatedRoute.data = of({ meta });
       comp.ngOnInit();
 
-      expect(comp.alunosSharedCollection).toContainEqual(metas);
+      expect(comp.alunosSharedCollection).toContainEqual(aluno);
       expect(comp.meta).toEqual(meta);
     });
   });

@@ -72,8 +72,8 @@ public class AlunoServiceImpl implements AlunoService {
     @Override
     @Transactional(readOnly = true)
     public Optional<AlunoDTO> findOne(Long id) {
-        LOG.debug("Request to get Aluno : {}", id);
-        return alunoRepository.findById(id).map(alunoMapper::toDto);
+        LOG.debug("Request to get Aluno with metas: {}", id);
+        return alunoRepository.findOneWithMetasById(id).map(alunoMapper::toDto);
     }
 
     @Override

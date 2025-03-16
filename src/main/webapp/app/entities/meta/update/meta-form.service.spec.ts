@@ -22,7 +22,7 @@ describe('Meta Form Service', () => {
             id: expect.any(Object),
             area: expect.any(Object),
             nota: expect.any(Object),
-            metas: expect.any(Object),
+            aluno: expect.any(Object),
           }),
         );
       });
@@ -35,7 +35,7 @@ describe('Meta Form Service', () => {
             id: expect.any(Object),
             area: expect.any(Object),
             nota: expect.any(Object),
-            metas: expect.any(Object),
+            aluno: expect.any(Object),
           }),
         );
       });

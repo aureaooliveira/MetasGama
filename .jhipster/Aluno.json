@@ -30,8 +30,8 @@
   "relationships": [
     {
       "otherEntityName": "meta",
-      "otherEntityRelationshipName": "metas",
-      "relationshipName": "meta",
+      "otherEntityRelationshipName": "aluno",
+      "relationshipName": "metas",
       "relationshipSide": "left",
       "relationshipType": "one-to-many"
     }

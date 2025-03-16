@@ -21,7 +21,8 @@
   "relationships": [
     {
       "otherEntityName": "aluno",
-      "relationshipName": "metas",
+      "otherEntityRelationshipName": "metas",
+      "relationshipName": "aluno",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
     }

@@ -11,7 +11,7 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring")
 public interface MetaMapper extends EntityMapper<MetaDTO, Meta> {
-    @Mapping(target = "metas", source = "metas", qualifiedByName = "alunoId")
+    @Mapping(target = "aluno", source = "aluno", qualifiedByName = "alunoId")
     MetaDTO toDto(Meta s);
 
     @Named("alunoId")

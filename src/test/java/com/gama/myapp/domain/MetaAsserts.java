@@ -60,6 +60,6 @@ public class MetaAsserts {
     public static void assertMetaUpdatableRelationshipsEquals(Meta expected, Meta actual) {
         assertThat(actual)
             .as("Verify Meta relationships")
-            .satisfies(a -> assertThat(a.getMetas()).as("check metas").isEqualTo(expected.getMetas()));
+            .satisfies(a -> assertThat(a.getAluno()).as("check aluno").isEqualTo(expected.getAluno()));
     }
 }

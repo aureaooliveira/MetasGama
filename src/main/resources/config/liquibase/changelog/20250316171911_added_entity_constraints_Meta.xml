@@ -10,9 +10,9 @@
     -->
     <changeSet id="20250316171911-2" author="jhipster">
 
-        <addForeignKeyConstraint baseColumnNames="metas_id"
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
                                  baseTableName="meta"
-                                 constraintName="fk_meta__metas_id"
+                                 constraintName="fk_meta__aluno_id"
                                  referencedColumnNames="id"
                                  referencedTableName="aluno"
                                  />

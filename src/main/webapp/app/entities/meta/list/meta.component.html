@@ -54,9 +54,9 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
-            <th scope="col" jhiSortBy="metas.id">
+            <th scope="col" jhiSortBy="aluno.id">
               <div class="d-flex">
-                <span>Metas</span>
+                <span>Aluno</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
@@ -78,9 +78,9 @@
               </td>
               <td>{{ meta.nota }}</td>
               <td>
-                @if (meta.metas) {
+                @if (meta.aluno) {
                   <div>
-                    <a [routerLink]="['/aluno', meta.metas.id, 'view']">{{ meta.metas.id }}</a>
+                    <a [routerLink]="['/aluno', meta.aluno.id, 'view']">{{ meta.aluno.id }}</a>
                   </div>
                 }
               </td>

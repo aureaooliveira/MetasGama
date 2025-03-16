@@ -4,6 +4,7 @@ export interface IAluno {
   sobreNome?: string | null;
   email?: string | null;
   cursoPretendido?: string | null;
+  metas?: any[];
 }
 
 export type NewAluno = Omit<IAluno, 'id'> & { id: null };

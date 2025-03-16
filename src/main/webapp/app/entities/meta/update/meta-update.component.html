@@ -50,8 +50,8 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label" for="field_metas">Metas</label>
-          <select class="form-control" id="field_metas" data-cy="metas" name="metas" formControlName="metas" [compareWith]="compareAluno">
+          <label class="form-label" for="field_aluno">Aluno</label>
+          <select class="form-control" id="field_aluno" data-cy="aluno" name="aluno" formControlName="aluno" [compareWith]="compareAluno">
             <option [ngValue]="null"></option>
             @for (alunoOption of alunosSharedCollection; track $index) {
               <option [ngValue]="alunoOption">{{ alunoOption.id }}</option>

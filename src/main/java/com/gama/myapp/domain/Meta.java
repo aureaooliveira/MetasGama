@@ -32,8 +32,9 @@ public class Meta implements Serializable {
     private Float nota;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "aluno_id")
     @JsonIgnoreProperties(value = { "metas" }, allowSetters = true)
-    private Aluno metas;
+    private Aluno aluno;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -76,16 +77,16 @@ public class Meta implements Serializable {
         this.nota = nota;
     }
 
-    public Aluno getMetas() {
-        return this.metas;
+    public Aluno getAluno() {
+        return this.aluno;
     }
 
-    public void setMetas(Aluno aluno) {
-        this.metas = aluno;
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
-    public Meta metas(Aluno aluno) {
-        this.setMetas(aluno);
+    public Meta aluno(Aluno aluno) {
+        this.setAluno(aluno);
         return this;
     }
 

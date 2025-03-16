@@ -5,7 +5,7 @@ export interface IMeta {
   id: number;
   area?: keyof typeof AreaDoEnem | null;
   nota?: number | null;
-  metas?: Pick<IAluno, 'id'> | null;
+  aluno?: Pick<IAluno, 'id'> | null;
 }
 
 export type NewMeta = Omit<IMeta, 'id'> & { id: null };

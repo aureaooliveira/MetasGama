@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20250316171910"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sobreNome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "cursoPretendido",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Aluno",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "meta",
+      "otherEntityRelationshipName": "metas",
+      "relationshipName": "meta",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

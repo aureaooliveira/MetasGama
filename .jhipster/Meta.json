@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20250316171911"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "area",
+      "fieldType": "AreaDoEnem",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "LINGUAGENS,CNATUREZA,CHUMANAS,MATEMATICA"
+    },
+    {
+      "fieldName": "nota",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Meta",
+  "relationships": [
+    {
+      "otherEntityName": "aluno",
+      "relationshipName": "metas",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

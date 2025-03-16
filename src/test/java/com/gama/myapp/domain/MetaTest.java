@@ -1,0 +1,37 @@
+package com.gama.myapp.domain;
+
+import static com.gama.myapp.domain.AlunoTestSamples.*;
+import static com.gama.myapp.domain.MetaTestSamples.*;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import com.gama.myapp.web.rest.TestUtil;
+import org.junit.jupiter.api.Test;
+
+class MetaTest {
+
+    @Test
+    void equalsVerifier() throws Exception {
+        TestUtil.equalsVerifier(Meta.class);
+        Meta meta1 = getMetaSample1();
+        Meta meta2 = new Meta();
+        assertThat(meta1).isNotEqualTo(meta2);
+
+        meta2.setId(meta1.getId());
+        assertThat(meta1).isEqualTo(meta2);
+
+        meta2 = getMetaSample2();
+        assertThat(meta1).isNotEqualTo(meta2);
+    }
+
+    @Test
+    void metasTest() {
+        Meta meta = getMetaRandomSampleGenerator();
+        Aluno alunoBack = getAlunoRandomSampleGenerator();
+
+        meta.setMetas(alunoBack);
+        assertThat(meta.getMetas()).isEqualTo(alunoBack);
+
+        meta.metas(null);
+        assertThat(meta.getMetas()).isNull();
+    }
+}

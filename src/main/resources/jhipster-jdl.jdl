@@ -1,24 +1,13 @@
 entity Aluno {
-	/**
-	* The firstname attribute.
-	*/
 	nome String required
 	sobreNome String required
 	email String unique
-	telefone String 
 	cursoPretendido String
-
 }
-
 
 entity Meta {
-	area AreaDoEnem 
+	area AreaDoEnem required
 	nota Float required
-}
-
-entity  MetaHistorico{
-    dataInicio Instant required
-    dataFim Instant
 }
 
 enum AreaDoEnem {
@@ -26,29 +15,16 @@ enum AreaDoEnem {
 }
 
 
-relationship OneToOne {
-	MetaHistorico{meta} to Meta
-}
-
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
 	Aluno to Meta{metas}
-    Aluno to MetaHistorico{metasHistorico}
     
-}
-
-relationship ManyToOne {
-	MetaHistorico{aluno} to Aluno
 }
 
 
 // Set pagination options
 paginate Aluno with infinite-scroll
-paginate MetaHistorico with pagination
-
 // Use Data Transfer Objects (DTO)
-// dto * with mapstruct
-
 
 dto * with mapstruct
 service * with serviceImpl

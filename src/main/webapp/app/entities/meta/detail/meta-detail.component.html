@@ -31,7 +31,7 @@
           <dd>
             @if (meta()!.aluno) {
               <div>
-                <a [routerLink]="['/aluno', meta()!.aluno?.id, 'view']">{{ metaRef.aluno?.id }}</a>
+                <a [routerLink]="['/aluno', meta()!.aluno?.id, 'view']">{{ metaRef.aluno?.nome + ' ' + metaRef.aluno?.sobreNome }}</a>
               </div>
             }
           </dd>

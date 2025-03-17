@@ -54,7 +54,7 @@
           <select class="form-control" id="field_aluno" data-cy="aluno" name="aluno" formControlName="aluno" [compareWith]="compareAluno">
             <option [ngValue]="null"></option>
             @for (alunoOption of alunosSharedCollection; track $index) {
-              <option [ngValue]="alunoOption">{{ alunoOption.id }}</option>
+              <option [ngValue]="alunoOption">{{ alunoOption.nome + ' ' + alunoOption.sobreNome }}</option>
             }
           </select>
         </div>
